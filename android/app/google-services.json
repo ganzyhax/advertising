@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1066945176473",
+    "project_id": "calcium-task-254113",
+    "storage_bucket": "calcium-task-254113.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066945176473:android:44afc83ee51f0da013a908",
+        "android_client_info": {
+          "package_name": "com.example.advesting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1066945176473-lkvn72mfmfjuf63ngqgsiolbc10hgm1g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.advesting",
+            "certificate_hash": "36f38b8ae332d801d70c7eebaf33b95b9cf93c99"
+          }
+        },
+        {
+          "client_id": "1066945176473-6nimqieuooo3bmndj0mdjo2p79bc7aet.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXAoYuAQIRVIUy01X8EE7cS_P4-3DF2q4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1066945176473-6nimqieuooo3bmndj0mdjo2p79bc7aet.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
