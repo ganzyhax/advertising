@@ -53,7 +53,7 @@ class _InfoWidState extends State<InfoWid> {
     FirebaseStorage storage = FirebaseStorage.instance;
     String mal = '';
     print(File(PickedFile!.path));
-    if (File(PickedFile!.path) != '' ) {
+    if (git initFile(PickedFile!.path) != '' ) {
       Reference ref;
       if (what == 0) {
         ref = storage.ref().child("image" + DateTime.now().toString());
