@@ -31,46 +31,13 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 40),
-                child: Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'LED',
-                            style: TextStyle(
-                                fontSize: 30,
-                                color: Color(0xffC9BEA8),
-                                fontWeight: FontWeight.bold),
-                            textAlign: TextAlign.left,
-                          ),
-                          Text('BILLBOARD',
-                              style: TextStyle(
-                                  fontSize: 35,
-                                  color: Color(0xffC9BEA8),
-                                  fontWeight: FontWeight.bold))
-                        ],
-                      ),
-                      Container(
-                        child: Text(
-                          '2021',
-                          style: TextStyle(
-                              fontSize: 55,
-                              color: Color(0xffC9BEA8),
-                              fontWeight: FontWeight.bold),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
+                padding: const EdgeInsets.only(top: 30),
+                child: Container(child: Center(child: Text('Размещение рекламы на LED экранах г.Алматы',style: TextStyle(fontSize: 25),textAlign:TextAlign.center,)),)
               ),
               const Padding(
                 padding: const EdgeInsets.only(left: 20, top: 40),
                 child: Text(
-                  'НОВАЯ РЕКЛАМНАЯ ПЛОЩАДКА',
+                  'САМЫЕ ТОПОВЫЕ МЕСТА ЮЖНОЙ СТОЛИЦЫ',
                   style: TextStyle(fontSize: 30),
                 ),
               ),
@@ -271,129 +238,129 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              const Padding(
-                padding: const EdgeInsets.only(left: 24, top: 40),
-                child: Text(
-                  'ТЕХНИЧЕСКИЕ ХАРАКТЕРИСТИКИ',
-                  style: TextStyle(fontSize: 30),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 30),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      children: [
-                        Container(
-                          width: 100,
-                          height: 100,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              width: 2,
-                              color: Color(0xffC9BEA8),
-                            ),
-                            shape: BoxShape.circle,
-                            color: Colors.white,
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text('3.7 X 7.3'),
-                              Text('МЕТРА'),
-                            ],
-                          ),
-                        ),
-                        Center(
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: 10),
-                            child: Container(
-                              child: Text(
-                                'РАЗМЕР ЭКРАНА',
-                                textAlign: TextAlign.center,
-                              ),
-                              width: 100,
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          width: 100,
-                          height: 100,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              width: 2,
-                              color: Color(0xffC9BEA8),
-                            ),
-                            shape: BoxShape.circle,
-                            color: Colors.white,
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text('00:00'),
-                              Text('24:00'),
-                            ],
-                          ),
-                        ),
-                        Center(
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: 10),
-                            child: Container(
-                              child: Text(
-                                'ВРЕМЯ ТРАНЦЛИЯЦИИ',
-                                textAlign: TextAlign.center,
-                              ),
-                              width: 100,
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          width: 100,
-                          height: 100,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              width: 2,
-                              color: Color(0xffC9BEA8),
-                            ),
-                            shape: BoxShape.circle,
-                            color: Colors.white,
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text('1920'),
-                              Text('1080'),
-                            ],
-                          ),
-                        ),
-                        Center(
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: 10),
-                            child: Container(
-                              child: Text(
-                                'РАЗМЕР ВИДЕО ФАЙЛА',
-                                textAlign: TextAlign.center,
-                              ),
-                              width: 100,
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-              ),
+              // const Padding(
+              //   padding: const EdgeInsets.only(left: 24, top: 40),
+              //   child: Text(
+              //     'ТЕХНИЧЕСКИЕ ХАРАКТЕРИСТИКИ',
+              //     style: TextStyle(fontSize: 30),
+              //   ),
+              // ),
+              // Padding(
+              //   padding: EdgeInsets.only(top: 30),
+              //   child: Row(
+              //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //     children: [
+              //       Column(
+              //         children: [
+              //           Container(
+              //             width: 100,
+              //             height: 100,
+              //             decoration: BoxDecoration(
+              //               border: Border.all(
+              //                 width: 2,
+              //                 color: Color(0xffC9BEA8),
+              //               ),
+              //               shape: BoxShape.circle,
+              //               color: Colors.white,
+              //             ),
+              //             child: Column(
+              //               crossAxisAlignment: CrossAxisAlignment.center,
+              //               mainAxisAlignment: MainAxisAlignment.center,
+              //               children: <Widget>[
+              //                 Text('3.7 X 7.3'),
+              //                 Text('МЕТРА'),
+              //               ],
+              //             ),
+              //           ),
+              //           Center(
+              //             child: Padding(
+              //               padding: const EdgeInsets.only(top: 10),
+              //               child: Container(
+              //                 child: Text(
+              //                   'РАЗМЕР ЭКРАНА',
+              //                   textAlign: TextAlign.center,
+              //                 ),
+              //                 width: 100,
+              //               ),
+              //             ),
+              //           )
+              //         ],
+              //       ),
+              //       Column(
+              //         children: [
+              //           Container(
+              //             width: 100,
+              //             height: 100,
+              //             decoration: BoxDecoration(
+              //               border: Border.all(
+              //                 width: 2,
+              //                 color: Color(0xffC9BEA8),
+              //               ),
+              //               shape: BoxShape.circle,
+              //               color: Colors.white,
+              //             ),
+              //             child: Column(
+              //               crossAxisAlignment: CrossAxisAlignment.center,
+              //               mainAxisAlignment: MainAxisAlignment.center,
+              //               children: <Widget>[
+              //                 Text('00:00'),
+              //                 Text('24:00'),
+              //               ],
+              //             ),
+              //           ),
+              //           Center(
+              //             child: Padding(
+              //               padding: const EdgeInsets.only(top: 10),
+              //               child: Container(
+              //                 child: Text(
+              //                   'ВРЕМЯ ТРАНЦЛИЯЦИИ',
+              //                   textAlign: TextAlign.center,
+              //                 ),
+              //                 width: 100,
+              //               ),
+              //             ),
+              //           )
+              //         ],
+              //       ),
+              //       Column(
+              //         children: [
+              //           Container(
+              //             width: 100,
+              //             height: 100,
+              //             decoration: BoxDecoration(
+              //               border: Border.all(
+              //                 width: 2,
+              //                 color: Color(0xffC9BEA8),
+              //               ),
+              //               shape: BoxShape.circle,
+              //               color: Colors.white,
+              //             ),
+              //             child: Column(
+              //               crossAxisAlignment: CrossAxisAlignment.center,
+              //               mainAxisAlignment: MainAxisAlignment.center,
+              //               children: <Widget>[
+              //                 Text('1920'),
+              //                 Text('1080'),
+              //               ],
+              //             ),
+              //           ),
+              //           Center(
+              //             child: Padding(
+              //               padding: const EdgeInsets.only(top: 10),
+              //               child: Container(
+              //                 child: Text(
+              //                   'РАЗМЕР ВИДЕО ФАЙЛА',
+              //                   textAlign: TextAlign.center,
+              //                 ),
+              //                 width: 100,
+              //               ),
+              //             ),
+              //           )
+              //         ],
+              //       ),
+              //     ],
+              //   ),
+              // ),
               const Padding(
                 padding: const EdgeInsets.only(left: 24, top: 40),
                 child: Text(

@@ -77,9 +77,9 @@ class _KorzinaState extends State<Korzina> {
                   String location = snapshot.data?.docs[index]['location'];
                   String del = snapshot.data?.docs[index]['id_del'];
                   if (location == '1') {
-                    location = 'Atakent';
+                    location = 'Атакент';
                   } else {
-                    location = 'Tolebi 60';
+                    location = 'Жибек Жолы 104а';
                   }
                   return InkWell(
                     onTap: () {

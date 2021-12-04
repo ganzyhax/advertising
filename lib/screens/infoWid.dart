@@ -32,14 +32,11 @@ class _InfoWidState extends State<InfoWid> {
   TextEditingController controllTel = new TextEditingController();
   TextEditingController controllEmail = new TextEditingController();
   int isClicked2 = 0;
-  String type = '';
+  String type = 'Buisness';
   final picker = ImagePicker();
   chooseFile(ImageSource source, int what) async {
     final PickedFile;
-    setState(() {
-      isLoadImage = 1;
-      imageFile = 'http://simpleicon.com/wp-content/uploads/loading.png';
-    });
+
     if (what == 0) {
       PickedFile = await picker.getImage(
         source: source == 'gallery' ? ImageSource.camera : ImageSource.gallery,
@@ -53,7 +50,11 @@ class _InfoWidState extends State<InfoWid> {
     FirebaseStorage storage = FirebaseStorage.instance;
     String mal = '';
     print(File(PickedFile!.path));
-    if (git initFile(PickedFile!.path) != '' ) {
+    if (File(PickedFile!.path) != '' ) {
+      setState(() {
+        isLoadImage = 1;
+        imageFile = 'http://simpleicon.com/wp-content/uploads/loading.png';
+      });
       Reference ref;
       if (what == 0) {
         ref = storage.ref().child("image" + DateTime.now().toString());
@@ -114,7 +115,10 @@ class _InfoWidState extends State<InfoWid> {
         String image = snapshot.data?.docs[widget.whichWid]['image'];
         String address = snapshot.data?.docs[widget.whichWid]['address'];
         String text = snapshot.data?.docs[widget.whichWid]['text'];
-
+        String razmer = snapshot.data?.docs[widget.whichWid]['razmer'];
+        String time = snapshot.data?.docs[widget.whichWid]['time'];
+        String videoRazmer = snapshot.data?.docs[widget.whichWid]['videoRazmer'];
+        print(videoRazmer);
         return Scaffold(
           body: SafeArea(
             child: SingleChildScrollView(
@@ -234,12 +238,132 @@ class _InfoWidState extends State<InfoWid> {
                                   fontFamily: "Product_Sans_Regular"),
                             ),
                           ),
-                          Padding( padding: EdgeInsets.only(top: 20),
-                            child: Column(
-                              children:[
-                                Text("Выберите пакет:",style:TextStyle(fontSize: 24))
+                          const Padding(
+                            padding: const EdgeInsets.only(left: 24, top: 40),
+                            child: Text(
+                              'ТЕХНИЧЕСКИЕ ХАРАКТЕРИСТИКИ',
+                              style: TextStyle(fontSize: 30),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top: 30),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  children: [
+                                    Container(
+                                      width: 100,
+                                      height: 100,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          width: 2,
+                                          color: Color(0xffC9BEA8),
+                                        ),
+                                        shape: BoxShape.circle,
+                                        color: Colors.white,
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: <Widget>[
+                                          Text(razmer.toString()),
+                                          Text('ПИКСЕЛЕЙ'),
+                                        ],
+                                      ),
+                                    ),
+                                    Center(
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(top: 10),
+                                        child: Container(
+                                          child: Text(
+                                            'РАЗМЕР ЭКРАНА',
+                                            textAlign: TextAlign.center,
+                                          ),
+                                          width: 100,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Container(
+                                      width: 100,
+                                      height: 100,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          width: 2,
+                                          color: Color(0xffC9BEA8),
+                                        ),
+                                        shape: BoxShape.circle,
+                                        color: Colors.white,
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: <Widget>[
+                                          // Text(time![0].toString()),
+                                          Text(time),
+                                          // Text(time![1].toString()),
+                                        ],
+                                      ),
+                                    ),
+                                    Center(
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(top: 10),
+                                        child: Container(
+                                          child: Text(
+                                            'ВРЕМЯ ТРАНЦЛИЯЦИИ',
+                                            textAlign: TextAlign.center,
+                                          ),
+                                          width: 100,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Container(
+                                      width: 100,
+                                      height: 100,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          width: 2,
+                                          color: Color(0xffC9BEA8),
+                                        ),
+                                        shape: BoxShape.circle,
+                                        color: Colors.white,
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: <Widget>[
+                                          Text(videoRazmer),
+                                          Text('ПИКСЕЛЕЙ'),
+
+                                        ],
+                                      ),
+                                    ),
+                                    Center(
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(top: 10),
+                                        child: Container(
+                                          child: Text(
+                                            'РАЗМЕР ВИДЕО ФАЙЛА',
+                                            textAlign: TextAlign.center,
+                                          ),
+                                          width: 100,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ],
-                            ),),
+                            ),
+                          ),
+
                           Padding(
                             padding: EdgeInsets.only(top: 20),
                             child: Column(
@@ -247,13 +371,9 @@ class _InfoWidState extends State<InfoWid> {
                                 InkWell(
                                   onTap: () {
                                     setState(() {
-                                      isClicked = 1;
-                                      isClicked2 = 0;
-                                      a = Color(0xffC9BEA8);
-                                      b = Colors.white;
+
                                       type = 'Buisness';
-                                      print(a);
-                                      print(b);
+
                                     });
                                   },
                                   child: Card(
@@ -298,61 +418,7 @@ class _InfoWidState extends State<InfoWid> {
                                     ),
                                   ),
                                 ),
-                                InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      isClicked2 = 1;
-                                      isClicked = 0;
-                                      b = Color(0xffC9BEA8);
-                                      a = Colors.white;
 
-                                      type = 'Premium';
-                                      print(a);
-                                      print(b);
-                                    });
-                                  },
-                                  child: Card(
-                                    color: b,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(5),
-                                    ),
-                                    child: Column(
-                                      children: [
-                                        SizedBox(
-                                          height: 12.0,
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text('Premium',
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 20)),
-                                            Text(
-                                              '1 780 000тг',
-                                              style: TextStyle(fontSize: 17),
-                                            ),
-                                            Column(
-                                              children: [
-                                                Text(
-                                                  '43 200 показов / в месяц',
-                                                  style: TextStyle(fontSize: 12),
-                                                ),
-                                                Text('1440 показов / в сутки',
-                                                    style:
-                                                        TextStyle(fontSize: 12))
-                                              ],
-                                            )
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          height: 12.0,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
                                 //Image
                                 Container(
                                   width: 360,
@@ -612,7 +678,7 @@ class _InfoWidState extends State<InfoWid> {
                                           'type': type,
                                           'id': text,
                                           'data': date.toString(),
-                                          'location': widget.whichWid.toString(),
+                                          'location': address,
                                           'id_del': refs.id.toString(),
                                         });
                                         showDialog(
